@@ -1,0 +1,128 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f4f7fb, #e9eef5);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    color: #333;
+}
+
+/* Main Tables Layout */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Form Card */
+form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    width: 100%;
+}
+
+/* Form Fields */
+form div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+input[type="text"] {
+    padding: 10px 12px;
+    border: 1px solid #dcdfe6;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* Submit Button */
+input[type="submit"] {
+    background: #4f46e5;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background: #4338ca;
+    transform: translateY(-1px);
+}
+
+/* Employee List Table */
+.list {
+    margin-top: 40px;
+    max-width: 800px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.list thead {
+    background: #4f46e5;
+    color: #ffffff;
+}
+
+.list th,
+.list td {
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.list th {
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.list tbody tr {
+    border-bottom: 1px solid #eef0f4;
+}
+
+.list tbody tr:hover {
+    background: #f8f9ff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    form {
+        padding: 20px;
+    }
+
+    .list th,
+    .list td {
+        font-size: 13px;
+        padding: 12px;
+    }
+}

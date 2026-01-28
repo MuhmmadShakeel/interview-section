@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <form onsubmit="event.preventDefault()" autocomplete="off">
+                <div>
+                    <label>Full Name</label>
+                    <input type="text" name="fullname" id="fullname">
+                </div>
+                <div>
+                    <label>EMP Code</label>
+                    <input type="text" name="empcode" id="empcode">
+                </div>
+                <div>
+                    <label>Salary</label>
+                    <input type="text" name="salary" id="salary">
+                </div>
+                <div>
+                    <label>City</label>
+                    <input type="text" name="city" id="city">
+                </div>
+                <div>
+                    <input type="submit" value="Submit" onclick="onformsubmit()">
+                </div>
+            </form>
+        </td>
+    </tr>
+</table>
+<table class="list" id="employeelist">
+       <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Emp Code</th>
+            <th>Salary</th>
+            <th>City</th>
+            <th>Action</th>
+        </tr>
+        <tbody>
+
+        </tbody>
+    </thead>
+</table>
+    <script src="script.js"></script>
+</body>
+</html>
