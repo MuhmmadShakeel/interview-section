@@ -1,22 +1,28 @@
 /* =========================
-   RESET & ROOT VARIABLES
+   ROOT VARIABLES (DARK PRO)
 ========================= */
 :root {
-    --primary: #6366f1;
-    --primary-dark: #4f46e5;
-    --bg-gradient: linear-gradient(135deg, #eef2ff, #f8fafc);
-    --card-bg: rgba(255, 255, 255, 0.85);
-    --border: rgba(0, 0, 0, 0.08);
-    --shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
-    --radius: 14px;
-    --transition: all 0.35s ease;
+    --primary: #22d3ee;
+    --primary-dark: #0ea5e9;
+    --accent: #a78bfa;
+    --bg: linear-gradient(135deg, #020617, #020617);
+    --card-bg: rgba(15, 23, 42, 0.75);
+    --border: rgba(255, 255, 255, 0.08);
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+    --radius: 18px;
+    --transition: all 0.4s ease;
 }
 
+/* =========================
+   RESET
+========================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
 }
 
 /* =========================
@@ -24,107 +30,106 @@
 ========================= */
 body {
     min-height: 100vh;
-    background: var(--bg-gradient);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 20px;
-    color: #1f2937;
-    animation: fadeIn 0.8s ease;
+    background: var(--bg);
+    color: var(--text);
+    padding: 40px;
+    animation: fadeIn 1s ease;
 }
 
 /* =========================
-   FORM CARD
+   APP LAYOUT
+========================= */
+.app {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    max-width: 1300px;
+    margin: auto;
+}
+
+/* =========================
+   FORM (RIGHT SIDE)
 ========================= */
 form {
-    width: 100%;
-    max-width: 520px;
+    width: 420px;
     background: var(--card-bg);
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(18px);
     padding: 32px;
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
     border: 1px solid var(--border);
-    animation: slideUp 0.7s ease;
+    box-shadow: var(--shadow);
+    animation: floatIn 0.8s ease;
 }
 
-/* =========================
-   FORM GROUPS
-========================= */
 form div {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
 
-/* =========================
-   LABEL
-========================= */
 label {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     margin-bottom: 6px;
-    color: #374151;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* =========================
-   INPUT
-========================= */
 input[type="text"] {
-    padding: 12px 14px;
-    border-radius: 10px;
-    border: 1px solid #d1d5db;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: rgba(2, 6, 23, 0.8);
+    color: var(--text);
     font-size: 14px;
     transition: var(--transition);
-    background: #fff;
 }
 
 input[type="text"]:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
-    transform: scale(1.01);
+    box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.25);
+    transform: scale(1.02);
 }
 
 /* =========================
    SUBMIT BUTTON
 ========================= */
 input[type="submit"] {
-    margin-top: 10px;
+    margin-top: 12px;
     padding: 14px;
     font-size: 15px;
-    font-weight: 600;
-    border-radius: 12px;
+    font-weight: 700;
+    border-radius: 14px;
     border: none;
     cursor: pointer;
-    color: #fff;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #020617;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     transition: var(--transition);
 }
 
 input[type="submit"]:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(34, 211, 238, 0.5);
 }
 
 input[type="submit"]:active {
-    transform: scale(0.97);
+    transform: scale(0.95);
 }
 
 /* =========================
-   TABLE CONTAINER
+   TABLE (LEFT SIDE)
 ========================= */
 .list {
-    margin-top: 50px;
-    width: 100%;
-    max-width: 900px;
+    flex: 1;
     background: var(--card-bg);
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(18px);
     border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
     border: 1px solid var(--border);
-    animation: fadeIn 1s ease;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    animation: slideLeft 0.9s ease;
 }
 
 /* =========================
@@ -135,39 +140,37 @@ table {
     border-collapse: collapse;
 }
 
-/* =========================
-   TABLE HEADER
-========================= */
-.list thead {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: #fff;
+thead {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
 }
 
-.list th {
-    padding: 16px;
+th {
+    padding: 18px;
     font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.4px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #020617;
+}
+
+td {
+    padding: 16px 18px;
+    font-size: 14px;
+    color: var(--text);
 }
 
 /* =========================
-   TABLE BODY
+   TABLE ROWS
 ========================= */
-.list td {
-    padding: 14px 16px;
-    font-size: 14px;
-    color: #374151;
-}
-
-.list tbody tr {
-    border-bottom: 1px solid #e5e7eb;
+tbody tr {
+    border-bottom: 1px solid var(--border);
     transition: var(--transition);
-    animation: rowFade 0.6s ease forwards;
+    animation: rowSlide 0.5s ease forwards;
 }
 
-.list tbody tr:hover {
-    background: rgba(99, 102, 241, 0.08);
-    transform: scale(1.01);
+tbody tr:hover {
+    background: rgba(34, 211, 238, 0.12);
+    transform: scale(1.02);
 }
 
 /* =========================
@@ -175,29 +178,27 @@ table {
 ========================= */
 .list a {
     text-decoration: none;
-    font-weight: 600;
-    margin-right: 10px;
+    font-weight: 700;
+    margin-right: 12px;
     color: var(--primary);
     transition: var(--transition);
 }
 
 .list a:hover {
-    color: var(--primary-dark);
-    text-decoration: underline;
+    color: var(--accent);
+    text-shadow: 0 0 10px rgba(167, 139, 250, 0.8);
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
-@media (max-width: 640px) {
-    form {
-        padding: 24px;
+@media (max-width: 900px) {
+    .app {
+        flex-direction: column;
     }
 
-    .list th,
-    .list td {
-        font-size: 12px;
-        padding: 12px;
+    form {
+        width: 100%;
     }
 }
 
@@ -205,29 +206,36 @@ table {
    ANIMATIONS
 ========================= */
 @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes floatIn {
     from {
         opacity: 0;
+        transform: translateY(40px) scale(0.95);
     }
     to {
         opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 
-@keyframes slideUp {
+@keyframes slideLeft {
     from {
         opacity: 0;
-        transform: translateY(25px);
+        transform: translateX(-50px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
 
-@keyframes rowFade {
+@keyframes rowSlide {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(12px);
     }
     to {
         opacity: 1;
